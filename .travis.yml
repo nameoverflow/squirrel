@@ -1,0 +1,17 @@
+language: objective-c
+matrix:
+  include:
+  - os: osx
+    compiler: clang
+install: make deps
+script: make
+after_success: make archive
+before_deploy: ./travis-before-deploy.sh
+deploy:
+  provider: bintray
+  file: travis-deploy-package.json
+  user: prcuvu
+  key:
+    secure: H2wE1kQ22lmpK/KOyyE/3uL7kCYf6TgOHdJHDILHGWTxYBr2BtNfevszmBWX8ABMW4uBArznNiS9sbVz4SnA5/sn6ZrIImk+uJQSWWAW7QJwcz/kPA2ae8tHf5ZpWcd69s95Epe/BakSCkQujpjdSQ4CgyYI5YWOpr7ugXubHN7JQX9vzx+edaJH/px2Us6cfXPLkl92EVr79BEryY0BM6kuWMLRXqkiUJvwgLGe6q+Wk4T609GNYaaQYIMZX0yNJTpiYOYM+bNIxcg9PYZ+noaJlCoKwXFRdaGo97eURgDH47KXVSOrBbksuE4+LrtOAytf98nfVl+gf+IsYIox4oQapmy8vjEmO3jUzxg9E6RB7crTPMb58DAU+0UKEdMumLbYmP8F2TNQJxwvRf+4s2W4SCAXAXZDX0Jb5olY0LTlLZJ0vaO7VhxoShPXDApxSEvB6VfCd6xp/vnYkfW0yRKVrTEmYtG5491g7IwV6EMQ9NpMBWQfn6nV2t+NqyVntSReLgFqNJuAWEx+LK7I0XUk+7/oAVQEiKHS37MWcjmqptcnIsyvLp6YwTbGfEu9FLzTDyWnBADj6VsoFLkuV5XajyY3zCSXuayHU765FHUBhNjohjh7v0vhIw2fNJ3Okq0ejdT0UcGnh4l/Y5pojtmrMFrFKLCM7Fn3rT8Jpuc=
+  on:
+    all_branches: true
