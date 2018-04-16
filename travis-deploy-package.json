@@ -1,19 +1,18 @@
 {
-    "package": {
-        "name": "travis-ci-artifacts",
-        "repo": "squirrel",
-        "subject": "prcuvu",
-        "vcs_url": "https://github.com/Prcuvu/squirrel.git",
-        "licenses": ["GPL-3.0", "BSD 3-Clause"]
-    },
+  "package": {
+    "name": "testing",
+    "repo": "squirrel",
+    "subject": "nof",
+    "vcs_url": "https://github.com/nameoverflow/squirrel.git",
+    "licenses": ["GPL-3.0", "BSD 3-Clause"]
+  },
 
-    "version": {
-        "name": "git-commit-hash"
-    },
+  "version": {
+    "name": "git-commit-hash"
+  },
 
-    "files":
-        [
-        {"includePattern": "package/archives/(.*\.zip)", "uploadPattern": "/$1"}
+  "files": [
+    { "includePattern": "package/archives/(.*\.zip)", "uploadPattern": "/$1" }
         ],
-    "publish": true
+  "publish": true
 }
